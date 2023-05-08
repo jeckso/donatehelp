@@ -9,7 +9,7 @@ ext.versions = [
         kotlin               : '1.8.0',
 
         // material
-        materialVersion      : '1.6.0',
+        materialVersion      : '1.0.1',
 
         // compose
         composeCompiler      : '1.4.0',

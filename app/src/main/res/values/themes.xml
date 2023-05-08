@@ -2,4 +2,9 @@
 <resources>
 
     <style name="Theme.DonateHelp" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.DonateHelp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 </resources>
