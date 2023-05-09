@@ -17,6 +17,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import com.jeckso.donatehelp.ui.details.DonateDetails
 import com.jeckso.donatehelp.ui.donates.Donates
 import com.jeckso.donatehelp.ui.theme.highlightGreen
 
@@ -59,13 +60,13 @@ fun DonateHelpMainScreen() {
                 navArgument(NavScreen.DonateDetails.argument0) { type = NavType.LongType }
             )
         ) { backStackEntry ->
-            val posterId =
+            val donateId =
                 backStackEntry.arguments?.getLong(NavScreen.DonateDetails.argument0)
                     ?: return@composable
 
-            Donates(viewModel = hiltViewModel(), selectDonate = {
-                navController.navigate("${NavScreen.DonateDetails.route}/$it")
-            })
+            DonateDetails(donateId = donateId, viewModel = hiltViewModel()) {
+                navController.navigateUp()
+            }
 
             LaunchedEffect(Unit) {
                 statusBarColor = Color.Transparent

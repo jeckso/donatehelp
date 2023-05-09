@@ -57,7 +57,7 @@ fun Donates(
         val (body, progress) = createRefs()
 
         Scaffold(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            containerColor = highlightGreen,
             topBar = { PosterAppBar() },
             modifier = Modifier.constrainAs(body) {
                 top.linkTo(parent.top)
